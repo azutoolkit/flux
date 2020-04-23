@@ -1,6 +1,22 @@
 # flux
 
-TODO: Write a description here
+Flux makes it easy to Test web applications by simulating a Real User would interact with your web based app. 
+
+This project uses **Marionette**
+
+Marionette is an automation driver for Mozilla’s Gecko engine. It can remotely control either the UI or the internal JavaScript of a Gecko platform, such as Firefox. It can control both the chrome (i.e. menus and functions) or the content (the webpage loaded inside the browsing context), giving a high level of control and ability to replicate user actions. In addition to performing actions on the browser, Marionette can also read the properties and attributes of the DOM.
+
+If this sounds similar to Selenium/WebDriver then you’re correct! Marionette shares much of the same ethos and API as Selenium/WebDriver, with additional commands to interact with Gecko’s chrome interface. Its goal is to replicate what Selenium does for web content: to enable the tester to have the ability to send commands to remotely control a user agent.
+
+Read more about Marionetter https://firefox-source-docs.mozilla.org/testing/marionette/Intro.html
+
+## How does it work?
+
+Marionette consists of two parts: a server which takes requests and executes them in Gecko, and a client. The client sends commands to the server and the server executes the command inside the browser.
+
+## When would I use it?
+
+If you want to perform UI tests with browser chrome or content, Marionette is the tool you’re looking for! You can use it to control either web content, or Firefox itself.
 
 ## Installation
 
@@ -20,11 +36,42 @@ TODO: Write a description here
 require "flux"
 ```
 
-TODO: Write usage instructions here
+```crystal
+require "./spec_helper"
+
+class UserFlux < Flux
+  def signup
+    step do
+      visit "http://localhost:4000/register"
+      fill "first_name", "John"
+      fill "last_name", "Doe"
+      fill "email", "john.doe@example.com"
+      fill "password", "example"
+      fill "password_confirm", "example"
+      checkbox id: "terms-checkbox", checked: true
+      submit "submit"
+    end
+  end
+end
+
+describe "User Signup" do
+  user = UserFlux.new
+
+  it "User visits site" do
+    user.signup
+
+    # ...add assertions...
+  end
+end
+```
 
 ## Development
 
-TODO: Write development instructions here
+```crystal 
+development_dependencies:
+  flux:
+    github: your-github-user/flux
+```
 
 ## Contributing
 
