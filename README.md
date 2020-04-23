@@ -25,7 +25,7 @@ If you want to perform UI tests with browser chrome or content, Marionette is th
    ```yaml
    dependencies:
      flux:
-       github: your-github-user/flux
+       github: eliasjpr/flux
    ```
 
 2. Run `shards install`
@@ -63,6 +63,27 @@ describe "User Signup" do
     # ...add assertions...
   end
 end
+```
+
+Run your tests
+
+```crystal 
+❯ crystal spec
+[DEBUG  ] - Using firefox executable at /usr/bin/firefox
+[DEBUG  ] - Launching browser
+[DEBUG  ] - Initialized a new browser instance
+[DEBUG  ] - Creating new session with capabilities: {acceptInsecureCerts: false, timeouts: {implicit: 30000, pageLoad: 30000, script: 30000}}
+*** You are running in headless mode.
+[DEBUG  ] - Navigating to http://localhost:4000/register
+[DEBUG  ] - Executing script
+[DEBUG  ] - Quitting browser
+[DEBUG  ] - Setting browser context to Chrome
+[DEBUG  ] - Executing script
+[DEBUG  ] - Setting browser context to Content
+.
+
+Finished in 1.36 seconds
+1 examples, 0 failures, 0 errors, 0 pending
 ```
 
 ## Development

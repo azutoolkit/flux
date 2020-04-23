@@ -4,11 +4,13 @@ class UserFlux < Flux
   def signup
     step do
       visit "http://localhost:4000/register"
-      fill "first_name", "John"
-      fill "last_name", "Doe"
-      fill "email", "john.doe@example.com"
-      fill "password", "example"
-      fill "password_confirm", "example"
+      
+      fill "first_name", with: "John"
+      fill "last_name", with: "Doe"
+      fill "email", with: "john.doe@example.com"
+      fill "password", with: "example"
+      fill "password_confirm", with: "example"
+
       checkbox id: "terms-checkbox", checked: true
       submit "submit"
     end

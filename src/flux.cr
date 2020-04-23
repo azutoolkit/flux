@@ -57,7 +57,7 @@ class Flux
     element_css_property(el, prop)
   end
 
-  def fill(el, value)
+  def fill(field el, with value)
     field(el).not_nil!.send_keys(value)
   end
 
