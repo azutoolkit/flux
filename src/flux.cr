@@ -5,6 +5,12 @@ class Flux
 
   @browser : Marionette::Browser
 
+  def self.step
+    flux = new
+    with flux yield
+    flux.quit
+  end
+
   def initialize
     @browser = Marionette.launch
   end
