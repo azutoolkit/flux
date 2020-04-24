@@ -88,11 +88,11 @@ Finished in 1.36 seconds
 
 ## Development
 
-```crystal 
-development_dependencies:
-  flux:
-    github: your-github-user/flux
-```
+Help with:
+
+- Add configurator to customize the driver
+- Define more usable and meaningful helper methods for testing 
+- Your ideas welcome, feel free to open an issue or PR
 
 ## Contributing
 
