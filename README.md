@@ -96,7 +96,7 @@ Help with:
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/flux/fork>)
+1. Fork it (<https://github.com/eliasjpr/flux/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -104,4 +104,4 @@ Help with:
 
 ## Contributors
 
-- [Elias J. Perez](https://github.com/your-github-user) - creator and maintainer
+- [Elias J. Perez](https://github.com/eliasjpr) - creator and maintainer
