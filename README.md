@@ -1,6 +1,6 @@
 # flux
 
-Flux makes it easy to Test web applications by simulating a Real User would interact with your web based app. 
+Flux makes it easy to Test web applications by simulating a Real User would interact with your web based app.
 
 This project uses **Marionette**
 
@@ -8,27 +8,27 @@ Marionette is an automation driver for Mozilla’s Gecko engine. It can remotely
 
 If this sounds similar to Selenium/WebDriver then you’re correct! Marionette shares much of the same ethos and API as Selenium/WebDriver, with additional commands to interact with Gecko’s chrome interface. Its goal is to replicate what Selenium does for web content: to enable the tester to have the ability to send commands to remotely control a user agent.
 
-Read more about Marionetter https://firefox-source-docs.mozilla.org/testing/marionette/Intro.html
+Read more about Marionetter <https://firefox-source-docs.mozilla.org/testing/marionette/Intro.html>
 
-## How does it work?
+## How does it work
 
 Marionette consists of two parts: a server which takes requests and executes them in Gecko, and a client. The client sends commands to the server and the server executes the command inside the browser.
 
-## When would I use it?
+## When would I use it
 
 If you want to perform UI tests with browser chrome or content, Marionette is the tool you’re looking for! You can use it to control either web content, or Firefox itself.
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+1.  Add the dependency to your `shard.yml`:
 
-   ```yaml
-   dependencies:
-     flux:
-       github: eliasjpr/flux
-   ```
+    ```yaml
+    dependencies:
+      flux:
+        github: eliasjpr/flux
+    ```
 
-2. Run `shards install`
+2.  Run `shards install`
 
 ## Usage
 
@@ -67,7 +67,7 @@ end
 
 Run your tests
 
-```crystal 
+```crystal
 ❯ crystal spec
 [DEBUG  ] - Using firefox executable at /usr/bin/firefox
 [DEBUG  ] - Launching browser
@@ -90,18 +90,18 @@ Finished in 1.36 seconds
 
 Help with:
 
-- Add configurator to customize the driver
-- Define more usable and meaningful helper methods for testing 
-- Your ideas welcome, feel free to open an issue or PR
+-   Add configurator to customize the driver
+-   Define more usable and meaningful helper methods for testing
+-   Your ideas welcome, feel free to open an issue or PR
 
 ## Contributing
 
-1. Fork it (<https://github.com/eliasjpr/flux/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+    1. Fork it (<https://github.com/eliasjpr/flux/fork>)
+    2. Create your feature branch (`git checkout -b my-new-feature`)
+    3. Commit your changes (`git commit -am 'Add some feature'`)
+    4. Push to the branch (`git push origin my-new-feature`)
+    5. Create a new Pull Request
 
 ## Contributors
 
-- [Elias J. Perez](https://github.com/eliasjpr) - creator and maintainer
+-   [Elias J. Perez](https://github.com/eliasjpr) - creator and maintainer

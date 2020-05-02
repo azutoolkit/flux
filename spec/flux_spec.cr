@@ -4,7 +4,7 @@ class UserFlux < Flux
   def signup
     step do
       visit "http://localhost:4000/register"
-      
+
       fill "first_name", with: "John"
       fill "last_name", with: "Doe"
       fill "email", with: "john.doe@example.com"
