@@ -1,5 +1,7 @@
 # flux
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad96c04bc4c644a8b2fbba4a860e5269)](https://app.codacy.com/manual/eliasjpr/flux?utm_source=github.com&utm_medium=referral&utm_content=eliasjpr/flux&utm_campaign=Badge_Grade_Settings)
+
 Flux makes it easy to Test web applications by simulating a Real User would interact with your web based app.
 
 This project uses **Marionette**
