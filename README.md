@@ -27,7 +27,7 @@ If you want to perform UI tests with browser chrome or content, Marionette is th
     ```yaml
     dependencies:
       flux:
-        github: eliasjpr/flux
+        github: azutoolkit/flux
     ```
 
 2.  Run `shards install`
