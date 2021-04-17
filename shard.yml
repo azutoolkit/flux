@@ -1,10 +1,10 @@
 name: flux
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - Elias J. Perez <eliasjpr@gmail.com>
 
-crystal: 0.34.0
+crystal: 1.0.0
 
 license: MIT
 
