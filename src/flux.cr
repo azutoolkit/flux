@@ -3,21 +3,21 @@ require "marionette"
 class Flux
   forward_missing_to @browser
 
-  @browser : Marionette::Browser
+  @browser : Marionette::Session
 
   def self.step
     flux = new
     with flux yield
-    flux.quit
+    flux.stop
   end
 
   def initialize
-    @browser = Marionette.launch
+    @browser = Marionette::WebDriver.create_session(:firefox)
   end
 
   def step(&block)
     with self yield
-    quit
+    stop
   end
 
   def checkbox(id, checked = true)
@@ -32,7 +32,7 @@ class Flux
   end
 
   def visit(path : String)
-    goto "#{path}"
+    navigate "#{path}"
   end
 
   def click(el)
