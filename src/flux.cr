@@ -8,6 +8,8 @@ class Flux
   def self.step
     flux = new
     with flux yield
+
+    sleep 70.millisecond
     flux.stop
   end
 
@@ -18,13 +20,13 @@ class Flux
   def step(&block)
     with self yield
     stop
+    close
   end
 
   def checkbox(id, checked = true)
     execute_script(
       "document.getElementById(arguments[0]).checked = #{checked};",
       [id, checked])
-    sleep 70.millisecond
   end
 
   def session
@@ -72,10 +74,12 @@ class Flux
   end
 
   def submit(el)
-    field(el).not_nil!.click
+    if sub_el = find_element el
+      sub_el.click
+    end
   end
 
-  def field(id, by = Marionette::LocationStrategy::Name)
-    find_element id, by
+  def field(name, by = Marionette::LocationStrategy::Name)
+    find_element name, by
   end
 end
