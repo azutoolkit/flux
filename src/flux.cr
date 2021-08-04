@@ -75,7 +75,7 @@ class Flux
     field(el).not_nil!.click
   end
 
-  def field(id, by = Marionette::Browser::LocatorStrategy::Name)
-    find_element by, id
+  def field(id, by = Marionette::LocationStrategy::Name)
+    find_element id, by
   end
 end
