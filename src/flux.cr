@@ -65,8 +65,8 @@ class Flux
     element_css_property(el, prop)
   end
 
-  def fill(field el, with value)
-    field(el).not_nil!.send_keys(value)
+  def fill(el, value, by = :id)
+    field(el, by).not_nil!.send_keys(value)
   end
 
   def text
@@ -79,7 +79,7 @@ class Flux
     end
   end
 
-  def field(name, by = Marionette::LocationStrategy::Name)
-    find_element name, by
+  def field(name, by = :id)
+    find_element name, Marionette::LocationStrategy.parse(by.to_s)
   end
 end
