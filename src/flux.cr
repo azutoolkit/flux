@@ -19,7 +19,7 @@ class Flux
 
   def step(&block)
     with self yield
-    stop
+  ensure
     close
   end
 
