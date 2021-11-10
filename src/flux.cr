@@ -13,14 +13,18 @@ class Flux
     flux.stop
   end
 
-  def initialize
-    @browser = Marionette::WebDriver.create_session(:firefox)
+  def initialize(engine : Marionette::Browser = :firefox)
+    @browser = Marionette::WebDriver.create_session(engine)
   end
 
   def step(&block)
     with self yield
   ensure
     close
+  end
+
+  def fullscreen
+    current_window.fullscreen
   end
 
   def checkbox(id, checked = true)
@@ -73,8 +77,8 @@ class Flux
     element_text(el)
   end
 
-  def submit(el)
-    if sub_el = find_element el
+  def submit(el, by = :id)
+    if sub_el = find_element el, Marionette::LocationStrategy.parse(by.to_s)
       sub_el.click
     end
   end
