@@ -13,7 +13,7 @@ class Flux
     flux.stop
   end
 
-  def initialize(engine : Marionette::Browser = :firefox)
+  def initialize(engine : Marionette::Browser = :firefox, options : Marionette::DriverOptions)
     @browser = Marionette::WebDriver.create_session(engine)
   end
 
