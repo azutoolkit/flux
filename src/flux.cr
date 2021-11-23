@@ -84,6 +84,6 @@ class Flux
   end
 
   def field(name, by = :id)
-    find_element name, Marionette::LocationStrategy::Css
+    find_element name, Marionette::LocationStrategy.parse(by.to_s)
   end
 end
